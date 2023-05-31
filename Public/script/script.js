@@ -1,4 +1,4 @@
-const APILINK = 'https://api.themoviedb.org/3/movie?sort_by=popularity.desc&api_key=07484714ff3cb0562d3e9c1e652ad1db&page=1';
+const APILINK = 'https://api.themoviedb.org/3/movie/550?api_key=07484714ff3cb0562d3e9c1e652ad1db';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 const SEARCHAPI = "https://api.themoviedb.org/3/movie?&api_key=07484714ff3cb0562d3e9c1e652ad1db&query=";
 
@@ -13,10 +13,8 @@ returnMovies(APILINK)
 
 function returnMovies(url){ fetch(url).then(res => res.json())
     .then(function(data)
-    {
-        console.log(data.results);
-        
-        data.results.forEach(element => {
+    {   
+        data.result.forEach(element => {
             /////creating a div tag
             const div_card = document.createElement('div');
             ///seting the class attttribute
